@@ -5,6 +5,7 @@ i) word2vec using cross entropy loss and noise contrastive estimation(NCE) loss.
 ii) Evaluation of the implementation on wor analogy tasks viz. King + Man - Woman ---> Queen
 
 References:
+
 https://lilianweng.github.io/lil-log/2017/10/15/learning-word-embedding.html#cross-entropy
 https://www.cs.toronto.edu/~amnih/papers/wordreps.pdf
 
