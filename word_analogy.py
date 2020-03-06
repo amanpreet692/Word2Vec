@@ -72,24 +72,5 @@ for word in ['first', 'american', 'would']:
 for key in word_sim_dict.keys():
     print("{}:{}".format(key, word_sim_dict[key]))
 
-"""
-==========================================================================
-
-Write code to evaluate a relation between pairs of words.
-You can access your trained model via dictionary and embeddings.
-dictionary[word] will give you word_id
-and embeddings[word_id] will return the embedding for that word.
-
-word_id = dictionary[word]
-v1 = embeddings[word_id]
-
-or simply
-
-v1 = embeddings[dictionary[word_id]]
-
-==========================================================================
-"""
-
-
 def similarity(x, y):
     return cosine_similarity(x, y)

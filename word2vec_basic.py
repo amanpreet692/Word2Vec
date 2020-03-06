@@ -90,8 +90,6 @@ def build_dataset(words):
 
 def generate_batch(data, batch_size, num_skips, skip_window):
     """
-  Write the code generate a training batch
-
   @data_index: the index of a word. You can access a word using data[data_index]
   @batch_size: the number of instances in one batch
   @num_skips: the number of samples you want to draw in a window 
@@ -128,49 +126,6 @@ def generate_batch(data, batch_size, num_skips, skip_window):
                     break
         data_index = data_index + 1
     return batch, labels
-    """
-  =================================================================================
-
-  You will generate small subset of training data, which is called batch.
-  For skip-gram model, you will slide a window
-  and sample training instances from the data inside the window.
-
-  Here is a small example.
-  Suppose that we have a text: "The quick brown fox jumps over the lazy dog."
-  And batch_size = 8, window_size = 3
-
-  "[The quick brown] fox jumps over the lazy dog"
-
-  Context word would be 'quick' and predicting words are 'The' and 'brown'.
-  This will generate training examples:
-       context(x), predicted_word(y)
-          (quick    ,       The)
-          (quick    ,     brown)
-
-  And then move the sliding window.
-  "The [quick brown fox] jumps over the lazy dog"
-  In the same way, we have to two more examples:
-      (brown, quick)
-      (brown, fox)
-
-  move the window again,
-  "The quick [brown fox jumps] over the lazy dog"
-  and we have
-      (fox, brown)
-      (fox, jumps)
-
-  Finally we get two instance from the moved window,
-  "The quick brown [fox jumps over] the lazy dog"
-      (jumps, fox)
-      (jumps, over)
-
-  Since now we have 8 training instances, which is the batch size,
-  stop generating batch and return batch data.
-
-
-  ===============================================================================
-  """
-
 
 def build_model(sess, graph, loss_model):
     """
